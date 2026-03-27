@@ -126,6 +126,45 @@ function Dashboard() {
         </button>
       </div>
 
+      <div className="status-counters">
+        <div
+          className="counter-card"
+          style={{ borderLeft: "4px solid #3b82f6" }}
+        >
+          <span className="counter-number">
+            {applications.filter((a) => a.status === "applied").length}
+          </span>
+          <span className="counter-label">{t("applied")}</span>
+        </div>
+        <div
+          className="counter-card"
+          style={{ borderLeft: "4px solid #f59e0b" }}
+        >
+          <span className="counter-number">
+            {applications.filter((a) => a.status === "interview").length}
+          </span>
+          <span className="counter-label">{t("interview")}</span>
+        </div>
+        <div
+          className="counter-card"
+          style={{ borderLeft: "4px solid #ef4444" }}
+        >
+          <span className="counter-number">
+            {applications.filter((a) => a.status === "rejected").length}
+          </span>
+          <span className="counter-label">{t("rejected")}</span>
+        </div>
+        <div
+          className="counter-card"
+          style={{ borderLeft: "4px solid #10b981" }}
+        >
+          <span className="counter-number">
+            {applications.filter((a) => a.status === "offer").length}
+          </span>
+          <span className="counter-label">{t("offer")}</span>
+        </div>
+      </div>
+
       {showForm && (
         <div className="form-card glass">
           <form onSubmit={handleSubmit}>
