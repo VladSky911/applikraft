@@ -17,6 +17,8 @@ function Dashboard() {
   });
   const [files, setFiles] = useState(null);
   const [expandedId, setExpandedId] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filterStatus, setFilterStatus] = useState("all");
 
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user") || "null");
@@ -94,6 +96,14 @@ function Dashboard() {
     }
   };
 
+  const filteredApplications = applications.filter((app) => {
+    const matchesSearch =
+      app.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      app.position.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesStatus = filterStatus === "all" || app.status === filterStatus;
+    return matchesSearch && matchesStatus;
+  });
+
   const statusColors = {
     applied: "#3b82f6",
     interview: "#f59e0b",
@@ -162,6 +172,34 @@ function Dashboard() {
             {applications.filter((a) => a.status === "offer").length}
           </span>
           <span className="counter-label">{t("offer")}</span>
+        </div>
+      </div>
+
+      <div className="filters-bar">
+        <input
+          type="text"
+          className="search-input"
+          placeholder={t("searchPlaceholder")}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <div className="filter-buttons">
+          {["all", "applied", "interview", "rejected", "offer"].map(
+            (status) => (
+              <button
+                key={status}
+                className={`filter-btn ${filterStatus === status ? "active" : ""}`}
+                onClick={() => setFilterStatus(status)}
+                style={
+                  filterStatus === status && status !== "all"
+                    ? { backgroundColor: statusColors[status], color: "white" }
+                    : {}
+                }
+              >
+                {status === "all" ? t("all") : t(status)}
+              </button>
+            ),
+          )}
         </div>
       </div>
 
@@ -250,11 +288,11 @@ function Dashboard() {
         </div>
       )}
 
-      {applications.length === 0 ? (
+      {filteredApplications.length === 0 ? (
         <p className="no-data">{t("noApplications")}</p>
       ) : (
         <div className="applications-list">
-          {applications.map((app) => (
+          {filteredApplications.map((app) => (
             <div key={app._id} className="app-card glass">
               <div
                 className="app-card-header"

@@ -32,6 +32,8 @@ const resources = {
       noApplications: "No applications yet. Start tracking!",
       appliedDate: "Applied Date",
       welcome: "Welcome",
+      all: "All",
+      searchPlaceholder: "Search company or position...",
     },
   },
   de: {
@@ -64,6 +66,8 @@ const resources = {
       noApplications: "Noch keine Bewerbungen. Fang an!",
       appliedDate: "Bewerbungsdatum",
       welcome: "Willkommen",
+      all: "Alle",
+      searchPlaceholder: "Unternehmen oder Position suchen...",
     },
   },
   ru: {
@@ -96,6 +100,8 @@ const resources = {
       noApplications: "Пока нет откликов. Начни отслеживать!",
       appliedDate: "Дата отклика",
       welcome: "Добро пожаловать",
+      all: "Все",
+      searchPlaceholder: "Поиск по компании или позиции...",
     },
   },
 };
