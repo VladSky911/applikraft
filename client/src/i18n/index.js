@@ -34,6 +34,9 @@ const resources = {
       welcome: "Welcome",
       all: "All",
       searchPlaceholder: "Search company or position...",
+      confirmDelete: "Are you sure?",
+      yes: "Yes",
+      no: "No",
     },
   },
   de: {
@@ -68,6 +71,9 @@ const resources = {
       welcome: "Willkommen",
       all: "Alle",
       searchPlaceholder: "Unternehmen oder Position suchen...",
+      confirmDelete: "Bist du sicher?",
+      yes: "Ja",
+      no: "Nein",
     },
   },
   ru: {
@@ -102,6 +108,9 @@ const resources = {
       welcome: "Добро пожаловать",
       all: "Все",
       searchPlaceholder: "Поиск по компании или позиции...",
+      confirmDelete: "Удалить?",
+      yes: "Да",
+      no: "Нет",
     },
   },
 };

@@ -87,9 +87,12 @@ function Dashboard() {
     setShowForm(true);
   };
 
+  const [deleteConfirmId, setDeleteConfirmId] = useState(null);
+
   const handleDelete = async (id) => {
     try {
       await axios.delete(`${API}/${id}`, { headers });
+      setDeleteConfirmId(null);
       fetchApplications();
     } catch (err) {
       console.log("Error deleting application");
@@ -353,12 +356,30 @@ function Dashboard() {
                     >
                       {t("edit")}
                     </button>
-                    <button
-                      className="btn btn-delete"
-                      onClick={() => handleDelete(app._id)}
-                    >
-                      {t("delete")}
-                    </button>
+                    {deleteConfirmId === app._id ? (
+                      <div className="delete-confirm">
+                        <span>{t("confirmDelete")}</span>
+                        <button
+                          className="btn btn-delete"
+                          onClick={() => handleDelete(app._id)}
+                        >
+                          {t("yes")}
+                        </button>
+                        <button
+                          className="btn"
+                          onClick={() => setDeleteConfirmId(null)}
+                        >
+                          {t("no")}
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        className="btn btn-delete"
+                        onClick={() => setDeleteConfirmId(app._id)}
+                      >
+                        {t("delete")}
+                      </button>
+                    )}
                   </div>
                 </div>
               )}

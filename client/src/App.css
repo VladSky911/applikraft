@@ -449,6 +449,20 @@ body::before {
   color: white;
 }
 
+/* Delete Confirm */
+.delete-confirm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: slideDown 0.2s ease;
+}
+
+.delete-confirm span {
+  font-size: 0.85rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .form-row {
