@@ -37,8 +37,11 @@ const resources = {
       confirmDelete: "Are you sure?",
       yes: "Yes",
       no: "No",
+      newest: "Newest",
+      oldest: "Oldest",
     },
   },
+
   de: {
     translation: {
       appName: "Applikraft",
@@ -74,8 +77,11 @@ const resources = {
       confirmDelete: "Bist du sicher?",
       yes: "Ja",
       no: "Nein",
+      newest: "Neueste",
+      oldest: "Älteste",
     },
   },
+
   ru: {
     translation: {
       appName: "Applikraft",
@@ -111,6 +117,8 @@ const resources = {
       confirmDelete: "Удалить?",
       yes: "Да",
       no: "Нет",
+      newest: "Новые",
+      oldest: "Старые",
     },
   },
 };

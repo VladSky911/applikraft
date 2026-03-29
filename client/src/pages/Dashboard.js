@@ -19,6 +19,7 @@ function Dashboard() {
   const [expandedId, setExpandedId] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterStatus, setFilterStatus] = useState("all");
+  const [sortOrder, setSortOrder] = useState("newest");
 
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user") || "null");
@@ -99,13 +100,20 @@ function Dashboard() {
     }
   };
 
-  const filteredApplications = applications.filter((app) => {
-    const matchesSearch =
-      app.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      app.position.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesStatus = filterStatus === "all" || app.status === filterStatus;
-    return matchesSearch && matchesStatus;
-  });
+  const filteredApplications = applications
+    .filter((app) => {
+      const matchesSearch =
+        app.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        app.position.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesStatus =
+        filterStatus === "all" || app.status === filterStatus;
+      return matchesSearch && matchesStatus;
+    })
+    .sort((a, b) => {
+      const dateA = new Date(a.appliedDate || a.createdAt);
+      const dateB = new Date(b.appliedDate || b.createdAt);
+      return sortOrder === "newest" ? dateB - dateA : dateA - dateB;
+    });
 
   const statusColors = {
     applied: "#3b82f6",
@@ -186,6 +194,14 @@ function Dashboard() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
+        <button
+          className="btn sort-btn"
+          onClick={() =>
+            setSortOrder(sortOrder === "newest" ? "oldest" : "newest")
+          }
+        >
+          {sortOrder === "newest" ? t("newest") : t("oldest")} ↕
+        </button>
         <div className="filter-buttons">
           {["all", "applied", "interview", "rejected", "offer"].map(
             (status) => (

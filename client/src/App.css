@@ -463,6 +463,12 @@ body::before {
   font-weight: 500;
 }
 
+/* Sort Button */
+.sort-btn {
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .form-row {
