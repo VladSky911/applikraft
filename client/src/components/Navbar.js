@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-function Navbar() {
+function Navbar({ toggleTheme, theme }) {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
@@ -24,6 +24,9 @@ function Navbar() {
         {t("appName")}
       </Link>
       <div className="navbar-right">
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
         <div className="lang-switcher">
           <button
             onClick={() => changeLanguage("en")}

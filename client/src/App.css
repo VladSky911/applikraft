@@ -545,3 +545,193 @@ body::before {
     flex-direction: column;
   }
 }
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Dark Theme */
+body[data-theme="dark"] {
+  background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"]::before {
+  opacity: 0.5;
+}
+
+body[data-theme="dark"] .glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme="dark"] .navbar {
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body[data-theme="dark"] .navbar-brand {
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .lang-switcher {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body[data-theme="dark"] .lang-switcher button {
+  color: #94a3b8;
+}
+
+body[data-theme="dark"] .lang-switcher button.active {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .btn {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body[data-theme="dark"] .btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+body[data-theme="dark"] .btn-primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+}
+
+body[data-theme="dark"] .btn-logout {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+body[data-theme="dark"] .btn-edit {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .btn-delete {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+body[data-theme="dark"] .auth-card h2 {
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .auth-link {
+  color: #94a3b8;
+}
+
+body[data-theme="dark"] .auth-link a {
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .form-group label {
+  color: #94a3b8;
+}
+
+body[data-theme="dark"] .form-group input,
+body[data-theme="dark"] .form-group select,
+body[data-theme="dark"] .form-group textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"] .form-group input:focus,
+body[data-theme="dark"] .form-group select:focus,
+body[data-theme="dark"] .form-group textarea:focus {
+  border-color: #60a5fa;
+}
+
+body[data-theme="dark"] .error-msg {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+body[data-theme="dark"] .counter-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .counter-number {
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"] .counter-label {
+  color: #94a3b8;
+}
+
+body[data-theme="dark"] .search-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+body[data-theme="dark"] .search-input:focus {
+  border-color: #60a5fa;
+}
+
+body[data-theme="dark"] .filter-buttons {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body[data-theme="dark"] .filter-btn {
+  color: #94a3b8;
+}
+
+body[data-theme="dark"] .filter-btn:hover {
+  background: rgba(96, 165, 250, 0.1);
+}
+
+body[data-theme="dark"] .filter-btn.active {
+  background: #2563eb;
+  color: white;
+}
+
+body[data-theme="dark"] .app-card-info p {
+  color: #94a3b8;
+}
+
+body[data-theme="dark"] .app-card:hover {
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+body[data-theme="dark"] .app-card-details {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body[data-theme="dark"] .app-card-details a {
+  color: #60a5fa;
+}
+
+body[data-theme="dark"] .no-data {
+  color: #64748b;
+}
+
+body[data-theme="dark"] .delete-confirm span {
+  color: #f87171;
+}
+
+body[data-theme="dark"] .screenshot-grid img {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
