@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
+import CustomSelect from "../components/CustomSelect";
 
 function Dashboard() {
   const { t } = useTranslation();
@@ -227,13 +228,24 @@ function Dashboard() {
           <form onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
-                <label>{t("company")}</label>
-                <input
-                  type="text"
-                  name="company"
-                  value={form.company}
-                  onChange={handleChange}
-                  required
+                <CustomSelect
+                  label={t("status")}
+                  value={form.status}
+                  onChange={(val) => setForm({ ...form, status: val })}
+                  options={[
+                    { value: "applied", label: t("applied"), color: "#3b82f6" },
+                    {
+                      value: "interview",
+                      label: t("interview"),
+                      color: "#f59e0b",
+                    },
+                    {
+                      value: "rejected",
+                      label: t("rejected"),
+                      color: "#ef4444",
+                    },
+                    { value: "offer", label: t("offer"), color: "#10b981" },
+                  ]}
                 />
               </div>
               <div className="form-group">
