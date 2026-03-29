@@ -21,8 +21,11 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect x='20' y='20' width='60' height='70' rx='4' fill='%233b82f6' opacity='0.03' transform='rotate(-5 50 55)'/%3E%3Crect x='120' y='40' width='55' height='65' rx='4' fill='%2306b6d4' opacity='0.03' transform='rotate(3 147 72)'/%3E%3Crect x='220' y='15' width='58' height='72' rx='4' fill='%238b5cf6' opacity='0.03' transform='rotate(-2 249 51)'/%3E%3Crect x='60' y='150' width='52' height='68' rx='4' fill='%2310b981' opacity='0.03' transform='rotate(4 86 184)'/%3E%3Crect x='180' y='160' width='62' height='60' rx='4' fill='%23f59e0b' opacity='0.03' transform='rotate(-3 211 190)'/%3E%3Crect x='30' y='240' width='56' height='66' rx='4' fill='%23ef4444' opacity='0.03' transform='rotate(2 58 273)'/%3E%3Crect x='160' y='250' width='50' height='58' rx='4' fill='%233b82f6' opacity='0.03' transform='rotate(-4 185 279)'/%3E%3Cline x1='35' y1='45' x2='65' y2='45' stroke='%233b82f6' stroke-width='1.5' opacity='0.03'/%3E%3Cline x1='35' y1='55' x2='60' y2='55' stroke='%233b82f6' stroke-width='1.5' opacity='0.03'/%3E%3Cline x1='135' y1='65' x2='162' y2='65' stroke='%2306b6d4' stroke-width='1.5' opacity='0.03'/%3E%3Cline x1='135' y1='75' x2='155' y2='75' stroke='%2306b6d4' stroke-width='1.5' opacity='0.03'/%3E%3Ccircle cx='25' cy='25' r='3' fill='%233b82f6' opacity='0.04'/%3E%3Ccircle cx='175' cy='165' r='3' fill='%2310b981' opacity='0.04'/%3E%3C/svg%3E");
-  background-repeat: repeat;
+  background-image: url("../public/bg-pattern.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 0;
 }
@@ -683,7 +686,7 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="dark"]::before {
-  opacity: 0.5;
+  opacity: 0.02;
 }
 
 body[data-theme="dark"] .glass {
